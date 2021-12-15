@@ -1,0 +1,16 @@
+//buy and sell stocks
+
+var maxProfit = function(prices) {
+    let min = prices[0];
+    let profit;
+    let maximumProfit = 0;
+    
+    for(let i=0;i<prices.length;i++){
+        min = Math.min(min,prices[i]);
+        profit= prices[i]-min;
+        maximumProfit = Math.max(maximumProfit,profit);
+    }
+    
+    
+    return maximumProfit;
+};
