@@ -28,3 +28,33 @@ var containsDuplicate = function(nums) {
     return false;
     
 };
+//product except self
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+    
+    let ans = []
+    
+    let temp = 1;
+    
+    for(let i=0;i<nums.length;i++){
+        ans[i]=1;
+    }
+    
+    for(let j=0;j<nums.length;j++){
+        ans[j] = temp;
+        temp *= nums[j]
+    }
+    
+    temp=1;
+    
+    for(let k=nums.length-1;k>=0;k--){
+        ans[k]=ans[k]*temp;
+        temp *= nums[k];
+    }
+    
+    return ans;
+    
+};
